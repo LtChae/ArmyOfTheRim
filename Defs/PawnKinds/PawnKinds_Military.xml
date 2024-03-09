@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--===================== Soldiers =========================-->
+
+  <PawnKindDef Name="SoldierBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>ArmyOfTheRim_Military</defaultFactionType>
+    <apparelColor>(107, 142, 35)</apparelColor>
+    <minTitleRequired>Ranker</minTitleRequired>
+    <maxGenerationAge>35</maxGenerationAge>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    <initialResistanceRange>4~10</initialResistanceRange>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+    <styleItemTags>
+      <li>
+        <tag>Soldier</tag>
+        <baseWeight>1</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <weaponMoney>1100~2500</weaponMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <apparelMoney>1250~2500</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelDisallowTags>
+      <li>Western</li>
+    </apparelDisallowTags>
+    <specificApparelRequirements>
+      <!-- Conditional Uniforms from VAE? -->
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <stuff>Synthread</stuff>
+      </li>
+      <li>
+        <bodyPartGroup>Legs</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <stuff>Synthread</stuff>
+      </li>
+    </specificApparelRequirements>
+    <techHediffsChance>0.2</techHediffsChance>
+    <techHediffsMoney>500~1000</techHediffsMoney>
+    <disallowedTraits>
+      <li>BodyPurist</li>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </PawnKindDef>
+
+  <!-- Branch Bases -->
+
+  <PawnKindDef Name="InfantryBase" Abstract="True" ParentName="SoldierBase">
+    <combatPower>65</combatPower>
+    <apparelMoney>1000~2000</apparelMoney>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_FlakVest</li>
+      <li>Apparel_AdvancedHelmet</li>
+    </apparelRequired>
+    <initialWillRange>2~4</initialWillRange>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>6~10</range>
+      </li>
+    </skills>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.1</Hussar>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+    <PawnKindDef Name="InfantryRankerBase" Abstract="True" ParentName="InfantryBase">
+        <royalTitleChance>1</royalTitleChance>
+    <titleSelectOne>
+      <li>Ranker</li>
+    </titleSelectOne>
+    </PawnKindDef>
+
+  <PawnKindDef Name="AssaultBase" Abstract="True" ParentName="SoldierBase">
+    <combatPower>90</combatPower>
+    <apparelMoney>2000~3000</apparelMoney>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_AdvancedHelmet</li>
+    </apparelRequired>
+    <initialWillRange>8~12</initialWillRange>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.3</Hussar>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef Name="ShockBase" Abstract="True" ParentName="SoldierBase">
+    <combatPower>120</combatPower>
+    <apparelColor>(105, 105, 105)</apparelColor>
+    <apparelMoney>3000~4000</apparelMoney>
+    <weaponMoney>2000~3000</weaponMoney>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_ArmorRecon</li>
+      <li>Apparel_AdvancedHelmet</li>
+    </apparelRequired>
+    <techHediffsChance>0.8</techHediffsChance>
+    <techHediffsMoney>1000~2000</techHediffsMoney>
+    <initialWillRange>14~18</initialWillRange>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>12~16</range>
+      </li>
+    </skills>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.5</Hussar>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <!-- Infantry -->
+
+  <PawnKindDef ParentName="InfantryRankerBase">
+    <defName>AoR_Military_Infantry</defName>
+    <label>infantry ranker</label>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryRankerBase">
+    <defName>AoR_Military_Infantry_Grenadier</defName>
+    <label>infantry grenadier</label>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
+    <weaponTags>
+      <li>GrenadeDestructive</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryRankerBase">
+    <defName>AoR_Military_Infantry_Marksman</defName>
+    <label>infantry marksman</label>
+    <weaponTags>
+      <li>SniperRifle</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>8~16</range>
+      </li>
+    </skills>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryRankerBase">
+    <defName>AoR_Military_Infantry_Gunner</defName>
+    <label>infantry gunner</label>
+    <weaponTags>
+      <li>GunHeavy</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryBase">
+    <defName>AoR_Military_Infantry_NCO</defName>
+    <label>infantry NCO</label>
+    <titleSelectOne>
+      <li>Sergeant</li>
+      <li>Corporal</li>
+    </titleSelectOne>
+    <initialResistanceRange>10~20</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryBase">
+    <defName>AoR_Military_InfantryOfficer</defName>
+    <label>infantry officer</label>
+    <titleSelectOne>
+      <li>Lieutenant</li>
+      <li>Captain</li>
+    </titleSelectOne>
+    <initialResistanceRange>16~24</initialResistanceRange>
+  </PawnKindDef>
+
+    <PawnKindDef ParentName="InfantryBase">
+    <defName>AoR_Military_InfantryStaffOfficer</defName>
+    <label>staff officer</label>
+    <factionHostileOnDeath>true</factionHostileOnDeath>
+    <titleSelectOne>
+      <li>Captain</li>
+      <li>Major</li>
+      <li>Colonel</li>
+    </titleSelectOne>
+    <initialWillRange>16~19</initialWillRange>
+    <initialResistanceRange>38~58</initialResistanceRange>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="InfantryBase">
+    <defName>AoR_Military_InfantryFieldMarshal</defName>
+    <factionLeader>true</factionLeader>
+    <label>field marshal</label>
+    <factionHostileOnDeath>true</factionHostileOnDeath>
+    <titleRequired>FieldMarshal</titleRequired>
+    <initialWillRange>16~19</initialWillRange>
+    <initialResistanceRange>38~58</initialResistanceRange>
+  </PawnKindDef>
+
+</Defs>

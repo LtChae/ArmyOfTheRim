@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <TraderKindDef>
+        <defName>Orbital_Quartermaster</defName>
+        <label>combat supplier</label>
+        <orbital>true</orbital>
+        <commonality>0.0</commonality>
+        <stockGenerators>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>0</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>ComponentIndustrial</thingDef>
+                <countRange>5~10</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineIndustrial</thingDef>
+                <countRange>30~50</countRange>
+            </li>
+            <li Class="StockGenerator_ReinforcedBarrels">
+                <countRange>5~10</countRange>
+            </li>
+
+            <!-- Weapons -->
+            <li Class="StockGenerator_Tag">
+                <tradeTag>WeaponRanged</tradeTag>
+                <maxTechLevelGenerate>Industrial</maxTechLevelGenerate>
+                <countRange>10~14</countRange>
+            </li>
+            <li Class="StockGenerator_Tag">
+                <tradeTag>MortarShell</tradeTag>
+                <thingDefCountRange>1~2</thingDefCountRange>
+                <countRange>20~40</countRange>
+            </li>
+
+            <!-- Apparel -->
+            <li Class="StockGenerator_Tag">
+                <tradeTag>Armor</tradeTag>
+                <countRange>8~10</countRange>
+            </li>
+
+            <!-- Implants -->
+            <!-- none -->
+
+            <!-- Buildings -->
+            <!-- none -->
+
+            <!-- Exotic -->
+            <!-- none -->
+
+            <!-- Slaves -->
+            <!-- none -->
+
+            <!-- Animals -->
+            <!-- none -->
+
+            <!-- Buying -->
+            <li Class="StockGenerator_BuyTradeTag">
+                <tag>WeaponRanged</tag>
+            </li>
+            <li Class="StockGenerator_BuyTradeTag">
+                <tag>Armor</tag>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+</Defs>

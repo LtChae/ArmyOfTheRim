@@ -1,0 +1,43 @@
+
+Make it feel like a military:
+  Automatic Resupply:
+    ☐ Triggers per quadrum @c# @high
+    ☐ Sends a quadrum's worth of food per soldier @c# @high
+    | bonus, make sure this is only for soldiers
+    | no supply for civilians
+    ☐ Optionally send ammo if CE enabled @cross-mod
+    ✔ Quartermaster caravan at the same time? @c# @done(24-03-09 10:51)
+    ☐ Requisition chits @xml
+    | Worth little to other factions, worth full price to military
+  Regular Reinforcements:
+    ☐ Triggers per year @c# @high
+    ☐ Sends enough soldiers for the officers you have @c# @high
+    ☐ Requires a command structure @xml
+    | (a captain can support x LTs, who can support x SGTs, who can support x CPLs who can support x rankers)
+    ☐ Dock performance if casualties were too high? @c#
+    | Or cap reinforcements (maybe do this anyway)
+  Officers:
+    ☐ Promoted via renamed honor @xml @high
+    | performance? results?
+    ☐ At captain, gain cooldown ability that grants performance to lower officers @xml @probably
+    | call it "commendation"
+    | conditional on completing missions
+    | can be applied to rankers too since they're technically "officers"
+    ☐ At lieutenant, gain per quadrum ability to recruit rankers from faction members
+    | they must be capable of violence
+    ☐ Why are moodlets for officers duplicated?
+  Impactful Permits:
+    These will be pretty similar to the existing imperial permits
+    ☐ Artillery strike
+    ☐ Temporary reinforcements
+    ☐ Emergency food
+    ☐ Emergency medicine
+    ☐ Medivac
+  Missions and Ops:
+    Special tasks, always violent, always awards performance
+    ☐ Rescue an Officer
+    ☐ Hold POWs
+    ☐ Patrols
+    | go to nearby place, chance for combat
+    | bonus - multiple places in one mission
+    ☐ Raids

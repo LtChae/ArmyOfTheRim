@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>ArmyOfTheRim_Military</defName>
+    <label>military</label>
+    <categoryTag>Military</categoryTag>
+    <description>This is a miltary unit deployed to this star system. They may have bases scattered around the planet, but their power rests in the fleet of transort ships in orbit. They have a particular mission here and may not care about you, though they're often willing to work with local factions and even recruit (or conscript) locals to replace losses.</description>
+    <pawnSingular>soldier</pawnSingular>
+    <pawnsPlural>soldiers</pawnsPlural>
+    <settlementGenerationWeight>0.2</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>sector marshal</leaderTitle>
+    <royalFavorLabel>effectiveness</royalFavorLabel>
+    <royalFavorIconPath>UI/Ideoligions/Universal/TripleCross</royalFavorIconPath>
+    <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+    <fixedLeaderKinds>
+      <li>AoR_Military_InfantryFieldMarshal</li>
+    </fixedLeaderKinds>
+    <!-- TODO: Find an icon -->
+    <factionIconPath>UI/Ideoligions/Universal/StarsC</factionIconPath>
+    <factionNameMaker>NamerFactionMilitary</factionNameMaker>
+    <settlementNameMaker>NamerSettlementMilitary</settlementNameMaker>
+    <royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
+    <royalTitleInheritanceRelations>
+    </royalTitleInheritanceRelations>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </allowedMemes>
+    <!-- Some mod integrations might be good here -->
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.15</Hussar>
+      </xenotypeChances>
+    </xenotypeSet>
+    <techLevel>Spacer</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <apparelStuffFilter>
+      <stuffCategoriesToAllow>
+        <li>Metallic</li>
+        <li>Fabric</li>
+      </stuffCategoriesToAllow>
+      <disallowedThingDefs>
+        <li>DevilstrandCloth</li>
+      </disallowedThingDefs>
+    </apparelStuffFilter>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <colorSpectrum>
+      <li>(0.29, 0.32, 0.12)</li>
+    </colorSpectrum>
+    <royalTitleTags>
+      <li>MilitaryTitle</li>
+    </royalTitleTags>
+    <baseTraderKinds>
+      <li>Orbital_Quartermaster</li>      <!-- TODO: Make custom trader kind -->
+    </baseTraderKinds>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1)</li>        <!--Constant 1 at all points levels-->
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <raidLootMaker>MilitaryRaidLootMaker</raidLootMaker>    <!-- TODO: Make custom loot maker -->
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(500, 100)</li>        <!-- Can always use relatively strong pawns, because military doesn't really have weak ones -->
+        <li>(1000, 150)</li>
+        <li>(2000, 250)</li>
+        <li>(2001, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- TODO: Define Military Pawn types -->
+        <!-- Normal fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <AoR_Military_Infantry>10</AoR_Military_Infantry>
+          <AoR_Military_Infantry_Gunner>2</AoR_Military_Infantry_Gunner>
+          <AoR_Military_Infantry_Marksman>2</AoR_Military_Infantry_Marksman>
+          <AoR_Military_Infantry_NCO>2</AoR_Military_Infantry_NCO>
+        </options>
+      </li>
+      <li>
+        <!-- breach fights -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <AoR_Military_Infantry>8</AoR_Military_Infantry>
+          <AoR_Military_Infantry_Gunner>4</AoR_Military_Infantry_Gunner>
+          <AoR_Military_Infantry_Grenadier>4</AoR_Military_Infantry_Grenadier>
+          <AoR_Military_Infantry_NCO>2</AoR_Military_Infantry_NCO>
+        </options>
+      </li>
+      <li>
+        <!-- Base defense, eventually make officers more common -->
+        <kindDef>Settlement</kindDef>
+        <options>
+          <AoR_Military_Infantry>10</AoR_Military_Infantry>
+          <AoR_Military_Infantry_Gunner>2</AoR_Military_Infantry_Gunner>
+          <AoR_Military_Infantry_Marksman>2</AoR_Military_Infantry_Marksman>
+          <AoR_Military_Infantry_NCO>2</AoR_Military_Infantry_NCO>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>70</configurationListOrderPriority>
+    <disallowedRaidAgeRestrictions>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Children</li>
+    </disallowedRaidAgeRestrictions>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>MilitaryRaidLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+            <li>Medicine</li>
+            <li>GoJuice</li>
+            <li>MealSurvivalPack</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+
+  <!-- =============================== Names =============================== -->
+
+  <RulePackDef>
+    <defName>NamerFactionMilitary</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[number] [unit]</li>
+
+        <li>number(p=4)->First</li>
+        <li>number->Second</li>
+        <li>number->Third</li>
+        <li>number->Fourth</li>
+        <li>number->Fifth</li>
+        <li>number->Sixth</li>
+        <li>number->Seventh</li>
+
+        <li>unit(p=2)->Fleet</li>
+        <li>unit->Army</li>
+        <li>unit->Territorial Army</li>
+        <li>unit->Royal Army</li>
+        <li>unit->Army of Liberation</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerSettlementMilitary</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->Fort [ConceptBadass]</li>
+        <li>r_name->Fort [ConceptPositive]</li>
+        <li>r_name->Camp [NamePerson]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

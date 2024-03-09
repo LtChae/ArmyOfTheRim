@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================= Thoughts related to military titles ============================= -->
+
+  <ThoughtDef>
+    <defName>MilitaryGainedTitle</defName>
+    <durationDays>7</durationDays>
+    <thoughtClass>Thought_MemoryRoyalTitle</thoughtClass>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>Received {TITLE} rank</label>
+        <description>I have been promoted to the rank of {TITLE}. I love the recognition!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryLostTitle</defName>
+    <durationDays>7</durationDays>
+    <thoughtClass>Thought_MemoryRoyalTitle</thoughtClass>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>Lost {TITLE} rank</label>
+        <description>I lost my rank of {TITLE}. This could end my career.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleApparelRequirementNotMet</defName>
+    <workerClass>ThoughtWorker_RoyalTitleApparelRequirementNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>want {TITLE_label}-specific apparel</label>
+        <description>{TITLE_indefinite} should be in uniform:\n\n{0}</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleApparelMinQualityNotMet</defName>
+    <workerClass>ThoughtWorker_RoyalTitleApparelMinQualityNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>want {TITLE_label}-quality apparel</label>
+        <description>{TITLE_indefinite} like myself should only wear apparel of {QUALITY} quality or better.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleThroneroomRequirementsNotMet</defName>
+    <workerClass>ThoughtWorker_ThroneRoomRequirementsNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>undignified office</label>
+        <description>I am {TITLE_indefinite} and I should have these items in my office:\n\n{0}</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleBedroomRequirementsNotMet</defName>
+    <workerClass>ThoughtWorker_BedroomRequirementsNotMet</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>undignified bedroom</label>
+        <description>{TITLE_indefinite} like myself deserves a bedroom that meets these requirements. There are privileges to rank!:\n\n{0}</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleNoThroneRoom</defName>
+    <workerClass>ThoughtWorker_NoThroneroom</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>no office</label>
+        <description>What is an officer with no office?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MilitaryTitleNoPersonalBedroom</defName>
+    <workerClass>ThoughtWorker_NoPersonalBedroom</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Ascetic</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>no personal bedroom</label>
+        <description>{TITLE_indefinite} should have a personal bedroom.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

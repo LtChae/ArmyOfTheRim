@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <IncidentDef>
+        <defName>CaravanArrivalQuartermaster</defName>
+        <label>quartermaster ship arrival arrival</label>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>LiegemanMods.IncidentWorker_CaravanArrivalQuartermaster</workerClass>
+        <category>FactionArrival</category>
+        <baseChance>0</baseChance>        <!-- given by a special storyteller comp -->
+        <requireColonistsPresent>True</requireColonistsPresent>
+    </IncidentDef>
+</Defs>
